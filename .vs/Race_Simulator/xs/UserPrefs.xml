@@ -19,10 +19,8 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Race_Simulator" expanded="True">
-            <Node name="Controller" expanded="True">
-              <Node name="Race.cs" selected="True" />
-            </Node>
+          <Node name="Race_Simulator" expanded="True" selected="True">
+            <Node name="Controller" expanded="True" />
             <Node name="ControllerTest" expanded="True" />
             <Node name="Model" expanded="True" />
             <Node name="Race_Simulator" expanded="True" />
