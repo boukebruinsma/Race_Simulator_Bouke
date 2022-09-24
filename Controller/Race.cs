@@ -19,6 +19,8 @@ namespace Controller
 
         //de value is hoever de participant heeft gereden
         private Dictionary<IParticipant, int> _positiesOpBaan = new Dictionary<IParticipant, int>();
+        private Dictionary<IParticipant, int> _rondjesGeredenPerDeelnemer = new Dictionary<IParticipant, int>();
+
 
         private Timer timer;
 
@@ -35,6 +37,7 @@ namespace Controller
             foreach (IParticipant participant in participants)
             {
                 _positiesOpBaan.Add(participant, 0);
+                _rondjesGeredenPerDeelnemer.Add(participant, 0);
             }
             timer = new Timer(1000);
             timer.Elapsed += OnTimedEvent;
@@ -46,6 +49,10 @@ namespace Controller
         public void PublishDriversChanged(DriversChangedEventArgs e)
         {
             //PositionParticipants(track, participants);
+            foreach (KeyValuePair<IParticipant, int> item in _positiesOpBaan)
+            {
+                Debug.WriteLine(item.Key.Name + ": " + item.Value); 
+            }
             MoveParticipants();
             DriversChanged(e);
             //Debug.WriteLine("huidige posities: ");
@@ -151,8 +158,14 @@ namespace Controller
 
                         if (_positiesOpBaan[_positions[previousSection].Left] >= 800)
                         {
+                            _rondjesGeredenPerDeelnemer[_positions[previousSection].Left]++;
                             _positiesOpBaan[_positions[previousSection].Left] -= 800;
+                            if (_rondjesGeredenPerDeelnemer[_positions[previousSection].Left] == 2)
+                            {
+                                _positions[previousSection].Left = null;
+                            }
                         }
+                    
 
                         if (counter == 8)
                         {
@@ -188,7 +201,12 @@ namespace Controller
 
                         if (_positiesOpBaan[_positions[previousSection].Right] >= 800)
                         {
+                            _rondjesGeredenPerDeelnemer[_positions[previousSection].Right]++;
                             _positiesOpBaan[_positions[previousSection].Right] -= 800;
+                            if(_rondjesGeredenPerDeelnemer[_positions[previousSection].Right] == 2)
+                            {
+                                _positions[previousSection].Right = null;
+                            }
                         }
 
                         if (counter == 8)

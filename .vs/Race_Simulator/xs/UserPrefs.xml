@@ -2,10 +2,10 @@
   <MonoDevelop.Ide.ItemProperties.Race__Simulator PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Race_Simulator/Program.cs" Line="23" Column="1" />
-      <File FileName="Controller/Race.cs" Line="21" Column="101" />
+      <File FileName="Race_Simulator/Program.cs" Line="25" Column="1" />
+      <File FileName="Controller/Race.cs" />
       <File FileName="Model/DriversChangedEventArgs.cs" />
-      <File FileName="Controller/Data.cs" Line="20" Column="123" />
+      <File FileName="Controller/Data.cs" />
       <File FileName="Model/Track.cs" />
       <File FileName="Model/IParticipant.cs" />
       <File FileName="Race_Simulator/Visual.cs" />
@@ -19,11 +19,13 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Race_Simulator" expanded="True" selected="True">
+          <Node name="Race_Simulator" expanded="True">
             <Node name="Controller" expanded="True" />
             <Node name="ControllerTest" expanded="True" />
             <Node name="Model" expanded="True" />
-            <Node name="Race_Simulator" expanded="True" />
+            <Node name="Race_Simulator" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
