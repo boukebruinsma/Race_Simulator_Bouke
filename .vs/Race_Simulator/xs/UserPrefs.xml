@@ -1,20 +1,29 @@
-﻿<Properties StartupConfiguration="{D17B8B5F-C5A0-4416-81D4-9F26F2AF1F8D}|Default">
+﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="Race Simulator">
   <MonoDevelop.Ide.ItemProperties.Race__Simulator PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ControllerTest/UnitTest1.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Race_Simulator/Program.cs" Line="1" Column="1" />
-      <File FileName="Model/Class1.cs" />
-      <File FileName="Controller/Class1.cs" />
-      <File FileName="ControllerTest/UnitTest1.cs" Line="1" Column="1" />
+      <File FileName="Race_Simulator/Program.cs" Line="23" Column="1" />
+      <File FileName="Controller/Race.cs" Line="21" Column="101" />
+      <File FileName="Model/DriversChangedEventArgs.cs" />
+      <File FileName="Controller/Data.cs" Line="20" Column="123" />
+      <File FileName="Model/Track.cs" />
+      <File FileName="Model/IParticipant.cs" />
+      <File FileName="Race_Simulator/Visual.cs" />
+      <File FileName="Model/IEquipment.cs" />
+      <File FileName="Model/Driver.cs" />
+      <File FileName="Model/Section.cs" />
+      <File FileName="Model/SectionTypes.cs" />
+      <File FileName="Model/Competition.cs" />
+      <File FileName="Model/Car.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Race_Simulator" expanded="True">
-            <Node name="Controller" expanded="True" />
-            <Node name="ControllerTest" expanded="True">
-              <Node name="UnitTest1.cs" selected="True" />
+            <Node name="Controller" expanded="True">
+              <Node name="Race.cs" selected="True" />
             </Node>
+            <Node name="ControllerTest" expanded="True" />
             <Node name="Model" expanded="True" />
             <Node name="Race_Simulator" expanded="True" />
           </Node>
@@ -22,13 +31,18 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Model FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.ControllerTest FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.ControllerTest PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Controller FirstBuild="True" />
-  <MultiItemStartupConfigurations />
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Race Simulator" Name="Race Simulator">
+      <Items>
+        <StartupItem ItemId="{F44C8560-B03A-4A71-BB99-6609E128C85C}" ItemName="ControllerTest" ConfigurationId="Default" />
+        <StartupItem ItemId="{D17B8B5F-C5A0-4416-81D4-9F26F2AF1F8D}" ItemName="Race_Simulator" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
 </Properties>

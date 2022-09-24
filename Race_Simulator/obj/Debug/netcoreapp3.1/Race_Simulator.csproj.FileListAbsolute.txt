@@ -3,10 +3,16 @@
 /Users/bouke/Projects/Race_Simulator/Race_Simulator/bin/Debug/netcoreapp3.1/Race_Simulator.runtimeconfig.dev.json
 /Users/bouke/Projects/Race_Simulator/Race_Simulator/bin/Debug/netcoreapp3.1/Race_Simulator.dll
 /Users/bouke/Projects/Race_Simulator/Race_Simulator/bin/Debug/netcoreapp3.1/Race_Simulator.pdb
-/Users/bouke/Projects/Race_Simulator/Race_Simulator/obj/Debug/netcoreapp3.1/Race_Simulator.csprojAssemblyReference.cache
 /Users/bouke/Projects/Race_Simulator/Race_Simulator/obj/Debug/netcoreapp3.1/Race_Simulator.AssemblyInfoInputs.cache
 /Users/bouke/Projects/Race_Simulator/Race_Simulator/obj/Debug/netcoreapp3.1/Race_Simulator.AssemblyInfo.cs
 /Users/bouke/Projects/Race_Simulator/Race_Simulator/obj/Debug/netcoreapp3.1/Race_Simulator.csproj.CoreCompileInputs.cache
 /Users/bouke/Projects/Race_Simulator/Race_Simulator/obj/Debug/netcoreapp3.1/Race_Simulator.dll
 /Users/bouke/Projects/Race_Simulator/Race_Simulator/obj/Debug/netcoreapp3.1/Race_Simulator.pdb
 /Users/bouke/Projects/Race_Simulator/Race_Simulator/obj/Debug/netcoreapp3.1/Race_Simulator.genruntimeconfig.cache
+/Users/bouke/Projects/Race_Simulator/Race_Simulator/bin/Debug/netcoreapp3.1/Controller.dll
+/Users/bouke/Projects/Race_Simulator/Race_Simulator/bin/Debug/netcoreapp3.1/Model.dll
+/Users/bouke/Projects/Race_Simulator/Race_Simulator/bin/Debug/netcoreapp3.1/Controller.pdb
+/Users/bouke/Projects/Race_Simulator/Race_Simulator/bin/Debug/netcoreapp3.1/Model.pdb
+/Users/bouke/Projects/Race_Simulator/Race_Simulator/obj/Debug/netcoreapp3.1/Race_Simulator.csproj.CopyComplete
+/Users/bouke/Projects/Race_Simulator/Race_Simulator/obj/Debug/netcoreapp3.1/Race_Simulator.csproj.AssemblyReference.cache
+/Users/bouke/Projects/Race_Simulator/Race_Simulator/obj/Debug/netcoreapp3.1/Race_Simulator.GeneratedMSBuildEditorConfig.editorconfig
