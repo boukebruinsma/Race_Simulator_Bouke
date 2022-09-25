@@ -13,14 +13,14 @@ namespace Race_Simulator
 
             
             Visual.DrawTrack(Data.CurrentRace.track);
-            Data.CurrentRace.DriversChanged += Visual.OnDriversChanged;
+            
             DriversChangedEventArgs changedArgs = new DriversChangedEventArgs();
             changedArgs.track = Data.CurrentRace.track;
             Thread.Sleep(3000);
             for (; ; )
             {
 
-                Thread.Sleep(1000);
+                Thread.Sleep(300);
             }
         }
     }

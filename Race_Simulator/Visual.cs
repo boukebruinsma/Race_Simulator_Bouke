@@ -12,7 +12,7 @@ namespace Race_Simulator
         {
             Data.Initialize();
             Data.NextRace();
-
+            Data.CurrentRace.DriversChanged += OnDriversChanged;
         }
 
         #region graphics
@@ -220,10 +220,25 @@ namespace Race_Simulator
         {
             
             Console.Clear();
-            
-            DrawTrack(dc.track);           
+
+            if(dc.track == null)
+            {
+                Console.WriteLine("de race op " + Data.CurrentRace.track.Name + " is afgelopen.");
+                Thread.Sleep(4000);
+                Console.Clear();
+                Data.CurrentRace.DriversChanged -= OnDriversChanged;
+                Data.NextRace();
+                Data.CurrentRace.DriversChanged += Visual.OnDriversChanged;
+                DrawTrack(Data.CurrentRace.track);
+            }
+            else
+            {
+                DrawTrack(dc.track);
+            }
+                      
         }
 
+        
         
 
         public static string placeParticipant(string input, IParticipant participant, IParticipant participant2)
