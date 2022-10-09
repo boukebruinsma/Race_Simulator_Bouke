@@ -3,8 +3,8 @@
   <MonoDevelop.Ide.Workbench>
     <Files>
       <File FileName="Race_Simulator/Program.cs" Line="16" Column="13" />
-      <File FileName="Controller/Race.cs" Line="202" Column="83" />
-      <File FileName="Controller/Data.cs" Line="20" Column="138" />
+      <File FileName="Controller/Race.cs" Line="134" Column="40" />
+      <File FileName="Controller/Data.cs" />
       <File FileName="Model/Competition.cs" />
       <File FileName="Race_Simulator/Visual.cs" />
       <File FileName="Model/DriversChangedEventArgs.cs" />
@@ -20,9 +20,7 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Race_Simulator" expanded="True">
-            <Node name="Controller" expanded="True">
-              <Node name="Data.cs" selected="True" />
-            </Node>
+            <Node name="Controller" expanded="True" selected="True" />
             <Node name="ControllerTest" expanded="True" />
             <Node name="Model" expanded="True" />
             <Node name="Race_Simulator" expanded="True" />

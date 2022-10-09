@@ -16,8 +16,8 @@ namespace Controller
         }
         public static void AddParticipants()
         {
-            Competition.Participants.Add(new Driver { Name = "Max", Equipment = new Car { Speed = 100, Performance = 100, Quality = 10 } });
-            Competition.Participants.Add(new Driver { Name = "Charles", Equipment = new Car { Speed = 50, Performance = 100, Quality = 8} });
+            Competition.Participants.Add(new Driver { Name = "Max", Equipment = new Car { Speed = 100, Performance = 100, Quality = 25 } });
+            Competition.Participants.Add(new Driver { Name = "Charles", Equipment = new Car { Speed = 50, Performance = 100, Quality = 22} });
 
         }
 

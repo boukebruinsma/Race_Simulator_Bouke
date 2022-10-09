@@ -133,10 +133,6 @@ namespace Controller
             bool leftHasMoved = false;
             bool rightHasMoved = false;
 
-
-            //0 of andere getallen is geen enkele kapot, 1 is alleen links, 2 alleen rechts, 3 allebei
-            int broken = _random.Next(100);
-
             foreach (Section section in track.Sections)
             {
                 
@@ -144,7 +140,7 @@ namespace Controller
                 {
                     if (!copiedPositions[previousSection].Left.Equipment.IsBroken)
                     {
-                        if (broken == 3 || broken == 1)
+                        if (_random.Next(copiedPositions[previousSection].Left.Equipment.Quality) == 1)
                         {
                             copiedPositions[previousSection].Left.Name = "†" + copiedPositions[previousSection].Left.Name;
                             copiedPositions[previousSection].Left.Equipment.IsBroken = true;
@@ -198,8 +194,8 @@ namespace Controller
                     {
                         copiedPositions[previousSection].Left.Name = copiedPositions[previousSection].Left.Name.Remove(0, 1);
                         copiedPositions[previousSection].Left.Equipment.IsBroken = false;
-                        copiedPositions[previousSection].Left.Equipment.Quality -= 10;
-                        copiedPositions[previousSection].Left.Equipment.Speed -= 3;
+                        copiedPositions[previousSection].Left.Equipment.Quality -= 3;
+                        copiedPositions[previousSection].Left.Equipment.Speed -= 15;
 
                     }
 
@@ -210,7 +206,7 @@ namespace Controller
                 {
                     if (!copiedPositions[previousSection].Right.Equipment.IsBroken)
                     {
-                        if (broken == 3 || broken == 2)
+                        if (_random.Next(copiedPositions[previousSection].Right.Equipment.Quality) == 1)
                         {
                             copiedPositions[previousSection].Right.Name = "†" + copiedPositions[previousSection].Right.Name;
                             copiedPositions[previousSection].Right.Equipment.IsBroken = true;
@@ -263,6 +259,8 @@ namespace Controller
                     {
                         copiedPositions[previousSection].Right.Name = copiedPositions[previousSection].Right.Name.Remove(0, 1);
                         copiedPositions[previousSection].Right.Equipment.IsBroken = false;
+                        copiedPositions[previousSection].Right.Equipment.Quality -= 3;
+                        copiedPositions[previousSection].Right.Equipment.Speed -= 15;
                     }
 
 
@@ -292,23 +290,9 @@ namespace Controller
             Debug.WriteLine("race is over");
             timer.Elapsed -= OnTimedEvent;
             DriversChanged(new DriversChangedEventArgs { });
-            
-            
-     
-
-            
-            
-            
         }
 
-        public bool CanContinue(IParticipant participant)
-        {
-            if(_random.Next(3) == 2)
-            {
-                return true;
-            }
-            return false;
-        }
+        
 
     }
 }
