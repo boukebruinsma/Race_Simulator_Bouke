@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 using Controller;
 using Model;
@@ -223,7 +225,11 @@ namespace Race_Simulator
 
             if(dc.track == null)
             {
-                Console.WriteLine("de race op " + Data.CurrentRace.track.Name + " is afgelopen.");
+                Console.WriteLine("de race op " + Data.CurrentRace.track.Name + " is afgelopen. \n");
+                List<GetPoints> newList = Data.Competition.PointsController._list.Cast<GetPoints>().ToList();
+                Console.WriteLine("dit zijn de huidige punten voor " + newList[0].Name + ": " + newList[0].ScoredPoints);
+                Console.WriteLine("dit zijn de huidige punten voor " + newList[1].Name + ": " + newList[1].ScoredPoints);
+                Console.WriteLine(Data.Competition.PointsController.FindBestParticipant() + " staat voor.");
                 Thread.Sleep(4000);
                 Console.Clear();
                 Data.CurrentRace.DriversChanged -= OnDriversChanged;

@@ -2,25 +2,23 @@
   <MonoDevelop.Ide.ItemProperties.Race__Simulator PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="Race_Simulator/Program.cs" Line="16" Column="13" />
-      <File FileName="Controller/Race.cs" Line="134" Column="40" />
-      <File FileName="Controller/Data.cs" />
-      <File FileName="Model/Competition.cs" />
-      <File FileName="Race_Simulator/Visual.cs" />
-      <File FileName="Model/DriversChangedEventArgs.cs" />
-      <File FileName="Model/Track.cs" />
-      <File FileName="Model/IParticipant.cs" />
-      <File FileName="Model/IEquipment.cs" />
-      <File FileName="Model/Driver.cs" />
-      <File FileName="Model/Section.cs" />
-      <File FileName="Model/SectionTypes.cs" />
-      <File FileName="Model/Car.cs" />
+      <File FileName="Race_Simulator/Program.cs" Line="22" Column="1" />
+      <File FileName="Controller/Race.cs" Line="49" Column="55" />
+      <File FileName="Model/Competition.cs" Line="20" Column="10" />
+      <File FileName="Model/GetPoints.cs" Line="36" Column="108" />
+      <File FileName="Model/GetLapTime.cs" Line="30" Column="49" />
+      <File FileName="Model/RaceController.cs" Line="21" Column="23" />
+      <File FileName="Model/DataTemplatesInterface.cs" Line="13" Column="78" />
+      <File FileName="Race_Simulator/Visual.cs" Line="232" Column="109" />
+      <File FileName="Controller/Data.cs" Line="20" Column="96" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Race_Simulator" expanded="True">
-            <Node name="Controller" expanded="True" selected="True" />
+            <Node name="Controller" expanded="True">
+              <Node name="Race.cs" selected="True" />
+            </Node>
             <Node name="ControllerTest" expanded="True" />
             <Node name="Model" expanded="True" />
             <Node name="Race_Simulator" expanded="True" />

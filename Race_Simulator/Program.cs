@@ -19,8 +19,7 @@ namespace Race_Simulator
             Thread.Sleep(3000);
             for (; ; )
             {
-
-                Thread.Sleep(300);
+                Thread.Sleep(1);
             }
         }
     }

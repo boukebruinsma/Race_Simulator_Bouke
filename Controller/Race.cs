@@ -16,15 +16,20 @@ namespace Controller
 
         private Random _random;
 
-        private int _rondjesTeRijden = 4;
+        private int _rondjesTeRijden = 2;
         private bool leftIsDone = false;
         private bool rightIsDone = false;
+        private bool leftFinishedFirst;
+        private Stopwatch watchLeft = new Stopwatch();
+        private Stopwatch watchRight = new Stopwatch();
 
         private Dictionary<Section, SectionData> _positions = new Dictionary<Section, SectionData>();
 
         //de value is hoever de participant heeft gereden
         private Dictionary<IParticipant, int> _positiesOpBaan = new Dictionary<IParticipant, int>();
         private Dictionary<IParticipant, int> _rondjesGeredenPerDeelnemer = new Dictionary<IParticipant, int>();
+        private GetLapTime _lapTimeLeft = new GetLapTime();
+        private GetLapTime _lapTimeRight = new GetLapTime();
 
 
         private Timer timer;
@@ -47,6 +52,14 @@ namespace Controller
                 _positiesOpBaan.Add(participant, 0);
                 _rondjesGeredenPerDeelnemer.Add(participant, 0);
             }
+            _lapTimeLeft.Name = participants[0].Name;
+            _lapTimeLeft.SectionTimes = new Dictionary<Section, TimeSpan>();
+
+            _lapTimeRight.Name = participants[1].Name;
+            _lapTimeRight.SectionTimes = new Dictionary<Section, TimeSpan>();
+
+            watchLeft.Start();
+            watchRight.Start();
             timer = new Timer(300);
             timer.Elapsed += OnTimedEvent;
             timer.AutoReset = true;
@@ -56,9 +69,18 @@ namespace Controller
 
         public void PublishDriversChanged(DriversChangedEventArgs e)
         {
+            
             MoveParticipants();
             if (rightIsDone && leftIsDone)
             {
+                if (leftFinishedFirst)
+                {
+                    GetResult(0);
+                }
+                else
+                {
+                    GetResult(1);
+                }
                 DisposeRace();
             }
             else
@@ -124,6 +146,30 @@ namespace Controller
             
         }
 
+        public void RemoveBrokenSign(int leftOrRight)
+        {
+            Data.Competition.Participants[leftOrRight].Name = Data.Competition.Participants[leftOrRight].Name.Remove(0, 1);
+        }
+
+
+
+        public string GetResult(int winnaar)
+        {           
+            Data.Competition.PointsController.PutList(new GetPoints(Data.Competition.Participants[winnaar].Name, 25 ));
+            if (winnaar == 0)
+            {
+                winnaar = 2;
+            }
+
+            //als de auto van de verliezer kapot is op het moment dat de winnaar finished
+            if (Data.Competition.Participants[winnaar - 1].Equipment.IsBroken)
+            {
+                RemoveBrokenSign(1);
+            }
+            Data.Competition.PointsController.PutList(new GetPoints(Data.Competition.Participants[winnaar - 1].Name, 18));
+            return "";
+        }
+
         public void MoveParticipants()
         {
             Section previousSection = track.Sections.Last.Value;
@@ -158,15 +204,22 @@ namespace Controller
 
                             if (_positiesOpBaan[copiedPositions[previousSection].Left] >= afstandAanEindSection * 100)
                             {
-
+                                watchLeft.Stop();
                                 if (_positiesOpBaan[_positions[previousSection].Left] >= 800)
                                 {
+                                    Data.Competition.TimeController.PutList(_lapTimeLeft);
+                                    _lapTimeLeft.SectionTimes.Clear();
+
                                     _rondjesGeredenPerDeelnemer[_positions[previousSection].Left]++;
                                     _positiesOpBaan[_positions[previousSection].Left] -= 800;
                                     if (_rondjesGeredenPerDeelnemer[_positions[previousSection].Left] == _rondjesTeRijden)
                                     {
                                         _positions[previousSection].Left = null;
                                         leftIsDone = true;
+                                        if (!rightIsDone)
+                                        {
+                                            leftFinishedFirst = true;
+                                        }
                                     }
                                 }
 
@@ -176,6 +229,7 @@ namespace Controller
                                     _positions[track.Sections.First.Value].Left = copiedPositions[track.Sections.Last.Value].Left;
                                     _positions[track.Sections.Last.Value].Left = copiedPositions[track.Sections.First.Value].Left;
 
+
                                 }
                                 else
                                 {
@@ -183,6 +237,10 @@ namespace Controller
                                     _positions[section].Left = _positions[previousSection].Left;
                                     _positions[previousSection].Left = backup;
                                 }
+
+                                _lapTimeLeft.SectionTimes.Add(previousSection, watchLeft.Elapsed);
+                                watchLeft.Reset();
+                                watchLeft.Start();
 
                                 leftHasMoved = true;
                             }
@@ -192,7 +250,7 @@ namespace Controller
                     }
                     else if (_random.Next(3) == 2)
                     {
-                        copiedPositions[previousSection].Left.Name = copiedPositions[previousSection].Left.Name.Remove(0, 1);
+                        RemoveBrokenSign(0);
                         copiedPositions[previousSection].Left.Equipment.IsBroken = false;
                         copiedPositions[previousSection].Left.Equipment.Quality -= 3;
                         copiedPositions[previousSection].Left.Equipment.Speed -= 15;
@@ -228,14 +286,21 @@ namespace Controller
 
                                 if (_positiesOpBaan[_positions[previousSection].Right] >= 800)
                                 {
+                                    Data.Competition.TimeController.PutList(_lapTimeRight);
+                                    _lapTimeRight.SectionTimes.Clear();
                                     _rondjesGeredenPerDeelnemer[_positions[previousSection].Right]++;
                                     _positiesOpBaan[_positions[previousSection].Right] -= 800;
                                     if (_rondjesGeredenPerDeelnemer[_positions[previousSection].Right] == _rondjesTeRijden)
                                     {
                                         _positions[previousSection].Right = null;
                                         rightIsDone = true;
+                                        if (!leftIsDone)
+                                        {
+                                            leftFinishedFirst = false;
+                                        }
                                     }
                                 }
+                               
 
                                 if (counter == 8)
                                 {
@@ -250,6 +315,10 @@ namespace Controller
                                     _positions[previousSection].Right = backup;
                                 }
 
+                                _lapTimeRight.SectionTimes.Add(previousSection, watchRight.Elapsed);
+                                watchRight.Reset();
+                                watchRight.Start();
+
                                 rightHasMoved = true;
                             }
                         }
@@ -257,7 +326,7 @@ namespace Controller
                     }
                     else if (_random.Next(3) == 2)
                     {
-                        copiedPositions[previousSection].Right.Name = copiedPositions[previousSection].Right.Name.Remove(0, 1);
+                        RemoveBrokenSign(1);
                         copiedPositions[previousSection].Right.Equipment.IsBroken = false;
                         copiedPositions[previousSection].Right.Equipment.Quality -= 3;
                         copiedPositions[previousSection].Right.Equipment.Speed -= 15;
