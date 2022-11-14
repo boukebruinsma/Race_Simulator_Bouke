@@ -1,0 +1,50 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-rb",
+      "appliesTo": "WPF_Sim/images/rb.png",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-straight",
+      "appliesTo": "WPF_Sim/images/straight.png",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-startgrid",
+      "appliesTo": "WPF_Sim/images/startgrid.png",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-right",
+      "appliesTo": "WPF_Sim/images/right.png",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-rb_broken",
+      "appliesTo": "WPF_Sim/images/rb_broken.png",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-left",
+      "appliesTo": "WPF_Sim/images/left.png",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-fr_broken",
+      "appliesTo": "WPF_Sim/images/fr_broken.png",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-fr",
+      "appliesTo": "WPF_Sim/images/fr.png",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "task-finish",
+      "appliesTo": "WPF_Sim/images/finish.png",
+      "type": "launch"
+    }
+  ]
+}
