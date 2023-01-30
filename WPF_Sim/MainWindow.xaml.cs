@@ -24,10 +24,14 @@ namespace WPF_Sim
     /// </summary>
     public partial class MainWindow : Window
     {
+        private RaceStats _raceStats;
+        private CompetitionStats _competitionStats;
+        private Data_Context Data_Context;
         public MainWindow()
         {
             InitializeComponent();
-
+            Data_Context = new Data_Context();
+            this.DataContext = Data_Context;
             Data.Initialize();
             Data.NextRace();
             Data.CurrentRace.DriversChanged += OnDriversChanged;
@@ -44,10 +48,53 @@ namespace WPF_Sim
                 DispatcherPriority.Render,
                 new Action(() =>
                 {
+                    if(dc.track == null)
+                    {
+                        this.MainTrack.Source = null;
+                        Data.CurrentRace.DriversChanged -= OnDriversChanged;
+                        Data.CurrentRace.DriversChanged -= Data_Context.OnDriversChanged;
+                        if (_competitionStats != null)
+                        {
+                            //Data.CurrentRace.DriversChanged -= _competitionStats.OnDriversChanged;
+                            Data.CurrentRace.DriversChanged -= _competitionStats.Data_Context.OnDriversChanged;
+                        }
+                        Data.NextRace();
+                        if(_competitionStats != null)
+                        {
+                            //Data.CurrentRace.DriversChanged += _competitionStats.OnDriversChanged;
+                            Data.CurrentRace.DriversChanged += _competitionStats.Data_Context.OnDriversChanged; 
+                        }
+                        Data.CurrentRace.DriversChanged += this.OnDriversChanged;
+                        Data.CurrentRace.DriversChanged += Data_Context.OnDriversChanged;
+                        ImageProcessor.ClearCache();
+                        ImageProcessor.DrawBackground(1280, 750);
+                        //Thread.Sleep(4000);
+                    }
                     this.MainTrack.Source = null;
                     this.MainTrack.Source = WPFVisual.DrawTrack(Data.CurrentRace.track);
                 }));
+            Data_Context.OnLapTimes(dc);
+        }
 
+        private void MenuItem_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void MenuItem_RaceStats_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Racestats is geopend hopelijk");
+            _raceStats = new RaceStats();
+            _raceStats.Show();
+            
+        }
+
+        private void MenuItem_CompetitionStats_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Competition is geopend hopelijk");
+            _competitionStats = new CompetitionStats();
+            _competitionStats.Show();
+            
         }
     }
 }

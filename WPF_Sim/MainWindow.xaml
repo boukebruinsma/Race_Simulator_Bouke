@@ -1,13 +1,28 @@
-﻿<Window x:Class="WPF_Sim.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WPF_Sim"
+        xmlns:local="clr-namespace:WPF_Sim" 
+        xmlns:Model="clr-namespace:Model;assembly=Model" 
+        x:Class="WPF_Sim.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FF3D6E38">
+        Title="MainWindow" Height="450" Width="800" IsEnabled="True">
+    <Window.DataContext>
+        <local:Data_Context/>
+    </Window.DataContext>
+    <Grid Background="#FF525252">
         <Image x:Name="MainTrack" Margin="24,27,24,22"/>
+        <DockPanel Height="20" VerticalAlignment="Top" DockPanel.Dock="Top">
+            <Menu>
+                <RibbonMenuItem Header="Menu">
+                    <Button Content="Race Stats" Click="MenuItem_RaceStats_Click"/>
+                    <Button Content="Competition Stats" Click="MenuItem_CompetitionStats_Click"/>
+                    <Button Background="#FFA01212" BorderBrush="White" Content="Competitie afsluiten" Foreground="White" Click="MenuItem_Exit_Click"/>
+                </RibbonMenuItem>
+            </Menu>
 
+        </DockPanel>
+        <Label x:Name="_trackName" Content="{Binding TrackName, BindsDirectlyToSource=False, IsAsync=False, NotifyOnTargetUpdated=False, NotifyOnValidationError=False, NotifyOnSourceUpdated=False, ValidatesOnNotifyDataErrors=True, ValidatesOnExceptions=False, ValidatesOnDataErrors=False}" HorizontalAlignment="Left" Margin="0,20,0,0" VerticalAlignment="Top" Foreground="White"/>
     </Grid>
 </Window>

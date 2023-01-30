@@ -9,7 +9,7 @@ public static class ImageProcessor
 {
     private static Dictionary<string, Bitmap> _cache = new Dictionary<string, Bitmap>();
 
-    public static Bitmap BitmapFunction(string url)
+    public static Bitmap InsertImage(string url)
     {
         if (_cache.TryGetValue(url, out var data))
         {
@@ -19,6 +19,40 @@ public static class ImageProcessor
         Bitmap bmp = new Bitmap(url);
         _cache.Add(url, bmp);
         return bmp;
+    }
+
+    public static Bitmap DrawSectorImage(string url, int x, int y, int direction, int distanceBetweenDrivers)
+    {
+        Bitmap bg = _cache["empty"];
+
+        Bitmap sector = InsertImage(url);
+        sector = new Bitmap(sector, new Size(sector.Width / 5, sector.Height / 5));
+
+        for (int i = 0; i < direction; i++)
+        {
+            sector.RotateFlip(RotateFlipType.Rotate90FlipNone);
+        }
+
+        if(direction == 0)
+        {
+            x += distanceBetweenDrivers;
+        }
+        else if(direction == 1)
+        {
+            y += distanceBetweenDrivers;
+        }
+        else if(direction == 2)
+        {
+            x -= distanceBetweenDrivers; 
+        }
+        else if(direction == 3)
+        {
+            y -= distanceBetweenDrivers;
+        }
+
+        Graphics g = Graphics.FromImage(bg);
+        g.DrawImage(sector, new Point(x, y));
+        return bg;
     }
 
     public static void ClearCache()
@@ -36,7 +70,7 @@ public static class ImageProcessor
         using (Graphics graph = Graphics.FromImage(bmp))
         {
             Rectangle ImageSize = new Rectangle(0, 0, width, height);
-            graph.FillRectangle(new SolidBrush(System.Drawing.Color.Green), ImageSize);
+            graph.FillRectangle(new SolidBrush(System.Drawing.Color.FromArgb(0, 255, 82, 32)), ImageSize);
         }
 
         _cache.Add("empty", bmp);

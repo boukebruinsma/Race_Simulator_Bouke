@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\WPF_Sim\App.xaml
-11407045341
+3198445960
 9639262563
-5276513348
+81603595641
 195265769319
-MainWindow.xaml;
+CompetitionStats.xaml;MainWindow.xaml;RaceStats.xaml;
 
 False
 
