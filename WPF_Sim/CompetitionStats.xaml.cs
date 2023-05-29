@@ -25,8 +25,8 @@ namespace WPF_Sim
         {
             InitializeComponent();
             Data_Context = new Data_Context();
+            Data.CurrentRace.DriversChanged += Data_Context.OnDriversChanged;
             this.DataContext = Data_Context;
-            //Data.CurrentRace.DriversChanged += OnDriversChanged;
 
         }
 

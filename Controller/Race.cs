@@ -3,6 +3,7 @@ using Model;
 using System.Collections.Generic;
 using System.Timers;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Controller
 {
@@ -40,30 +41,39 @@ namespace Controller
 
         public Race(Track track, List<IParticipant> participants)
         {
-            StartTime = DateTime.Now;
-            _random = new Random();
-            this.track = track;
-            this.participants = participants;
-            Debug.WriteLine("dit is het begin van de race. De baan is: " + track.Name);
-            //RandomizeEquipment();
-            PositionParticipants(track, participants);
-            foreach (IParticipant participant in participants)
+            if (track != null)
             {
-                _positiesOpBaan.Add(participant, 0);
-                _rondjesGeredenPerDeelnemer.Add(participant, 0);
+                StartTime = DateTime.Now;
+                _random = new Random();
+                this.track = track;
+                this.participants = participants;
+                Debug.WriteLine("dit is het begin van de race. De baan is: " + track.Name);
+                //RandomizeEquipment();
+                PositionParticipants(track, participants);
+                foreach (IParticipant participant in participants)
+                {
+                    _positiesOpBaan.Add(participant, 0);
+                    _rondjesGeredenPerDeelnemer.Add(participant, 0);
+                }
+                _lapTimeLeft.Name = participants[0].Name;
+                _lapTimeLeft.SectionTimes = new Dictionary<Section, TimeSpan>();
+
+                _lapTimeRight.Name = participants[1].Name;
+                _lapTimeRight.SectionTimes = new Dictionary<Section, TimeSpan>();
+
+                watchLeft.Start();
+                watchRight.Start();
+                timer = new Timer(500);
+                timer.Elapsed += OnTimedEvent;
+                timer.AutoReset = true;
+                timer.Start();
             }
-            _lapTimeLeft.Name = participants[0].Name;
-            _lapTimeLeft.SectionTimes = new Dictionary<Section, TimeSpan>();
-
-            _lapTimeRight.Name = participants[1].Name;
-            _lapTimeRight.SectionTimes = new Dictionary<Section, TimeSpan>();
-
-            watchLeft.Start();
-            watchRight.Start();
-            timer = new Timer(300);
-            timer.Elapsed += OnTimedEvent;
-            timer.AutoReset = true;
-            timer.Start();
+            //else
+            //{
+            //    Delegate[] clientList = DriversChanged.GetInvocationList();
+            //    foreach (var d in clientList)
+            //        DriversChanged -= (d as Changed);
+            //}
             
         }
 
@@ -207,6 +217,19 @@ namespace Controller
                                 watchLeft.Stop();
                                 if (_positiesOpBaan[_positions[previousSection].Left] >= 800)
                                 {
+                                    
+                                    if (_lapTimeLeft.LapTimes == null)
+                                    {
+                                        _lapTimeLeft.LapTimes = new List<double>();
+                                    }
+
+                                    double newLapTime = 0.0;
+
+                                    foreach (var item in _lapTimeLeft.SectionTimes)
+                                    {
+                                        newLapTime += item.Value.TotalSeconds;
+                                    }
+                                    _lapTimeLeft.LapTimes.Add(newLapTime);
                                     Data.Competition.TimeController.PutList(_lapTimeLeft);
                                     _lapTimeLeft.SectionTimes.Clear();
 
@@ -286,7 +309,22 @@ namespace Controller
 
                                 if (_positiesOpBaan[_positions[previousSection].Right] >= 800)
                                 {
+                                    
+
+                                    if (_lapTimeRight.LapTimes == null)
+                                    {
+                                        _lapTimeRight.LapTimes = new List<double>();
+                                    }
+
+                                    double newLapTime = 0.0;
+
+                                    foreach (var item in _lapTimeRight.SectionTimes)
+                                    {
+                                        newLapTime += item.Value.TotalSeconds;
+                                    }
+                                    _lapTimeRight.LapTimes.Add(newLapTime);
                                     Data.Competition.TimeController.PutList(_lapTimeRight);
+
                                     _lapTimeRight.SectionTimes.Clear();
                                     _rondjesGeredenPerDeelnemer[_positions[previousSection].Right]++;
                                     _positiesOpBaan[_positions[previousSection].Right] -= 800;
@@ -345,13 +383,7 @@ namespace Controller
 
                 previousSection = section;
                 counter++;
-            }
-            
-
-
-            
-            
-            
+            } 
         }
 
         public void DisposeRace()
@@ -360,8 +392,5 @@ namespace Controller
             timer.Elapsed -= OnTimedEvent;
             DriversChanged(new DriversChangedEventArgs { });
         }
-
-        
-
     }
 }

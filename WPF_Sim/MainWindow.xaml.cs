@@ -34,12 +34,16 @@ namespace WPF_Sim
             this.DataContext = Data_Context;
             Data.Initialize();
             Data.NextRace();
-            Data.CurrentRace.DriversChanged += OnDriversChanged;
+            if(Data.CurrentRace.track != null)
+            {
+                Data.CurrentRace.DriversChanged += OnDriversChanged;
 
-            WPFVisual.DrawTrack(Data.CurrentRace.track);
+                WPFVisual.DrawTrack(Data.CurrentRace.track);
 
-            DriversChangedEventArgs changedArgs = new DriversChangedEventArgs();
-            changedArgs.track = Data.CurrentRace.track;
+                DriversChangedEventArgs changedArgs = new DriversChangedEventArgs();
+                changedArgs.track = Data.CurrentRace.track;
+            }
+            
         }
 
         public void OnDriversChanged(DriversChangedEventArgs dc)
@@ -58,22 +62,40 @@ namespace WPF_Sim
                             //Data.CurrentRace.DriversChanged -= _competitionStats.OnDriversChanged;
                             Data.CurrentRace.DriversChanged -= _competitionStats.Data_Context.OnDriversChanged;
                         }
+                        if (_raceStats != null)
+                        {
+                            //Data.CurrentRace.DriversChanged -= _competitionStats.OnDriversChanged;
+                            Data.CurrentRace.DriversChanged -= _raceStats.Data_Context.OnDriversChanged;
+                        }
                         Data.NextRace();
                         if(_competitionStats != null)
                         {
                             //Data.CurrentRace.DriversChanged += _competitionStats.OnDriversChanged;
-                            Data.CurrentRace.DriversChanged += _competitionStats.Data_Context.OnDriversChanged; 
+                            Data.CurrentRace.DriversChanged += _competitionStats.Data_Context.OnDriversChanged;
                         }
+                        if (_raceStats != null)
+                        {
+                            //Data.CurrentRace.DriversChanged += _competitionStats.OnDriversChanged;
+                            Data.CurrentRace.DriversChanged += _raceStats.Data_Context.OnDriversChanged;
+                        }
+
                         Data.CurrentRace.DriversChanged += this.OnDriversChanged;
                         Data.CurrentRace.DriversChanged += Data_Context.OnDriversChanged;
                         ImageProcessor.ClearCache();
                         ImageProcessor.DrawBackground(1280, 750);
                         //Thread.Sleep(4000);
                     }
+                    //else
+                    //{
+                    //    Data_Context.OnDriversChanged(dc);
+                    //}
                     this.MainTrack.Source = null;
-                    this.MainTrack.Source = WPFVisual.DrawTrack(Data.CurrentRace.track);
+                    if(Data.Competition.Tracks.Count > 0)
+                    {
+                        this.MainTrack.Source = WPFVisual.DrawTrack(Data.CurrentRace.track);
+                    }
                 }));
-            Data_Context.OnLapTimes(dc);
+            
         }
 
         private void MenuItem_Exit_Click(object sender, RoutedEventArgs e)

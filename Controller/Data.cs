@@ -27,14 +27,14 @@ namespace Controller
 
             //SectionTypes[] sectionTypes = { SectionTypes.RightCorner, SectionTypes.Finish, SectionTypes.StartGrid, SectionTypes.RightCorner, SectionTypes.Straight, SectionTypes.RightCorner, SectionTypes.Straight, SectionTypes.Straight, SectionTypes.RightCorner, SectionTypes.Straight};
 
-            Competition.Tracks.Enqueue(new Track("Baan 1", sectionTypes));            
-            Competition.Tracks.Enqueue(new Track("Baan 2", sectionTypes));
-            Competition.Tracks.Enqueue(new Track("Baan 3", sectionTypes));
-            Competition.Tracks.Enqueue(new Track("Baan 4", sectionTypes));
-            Competition.Tracks.Enqueue(new Track("Baan 5", sectionTypes));
-            Competition.Tracks.Enqueue(new Track("Baan 6", sectionTypes));
-            Competition.Tracks.Enqueue(new Track("Baan 7", sectionTypes));
-            Competition.Tracks.Enqueue(new Track("Baan 8", sectionTypes));
+            Competition.Tracks.Enqueue(new Track("Track 1", sectionTypes));            
+            Competition.Tracks.Enqueue(new Track("Track 2", sectionTypes));
+            Competition.Tracks.Enqueue(new Track("Track 3", sectionTypes));
+            Competition.Tracks.Enqueue(new Track("Track 4", sectionTypes));
+            Competition.Tracks.Enqueue(new Track("Track 5", sectionTypes));
+            Competition.Tracks.Enqueue(new Track("Track 6", sectionTypes));
+            Competition.Tracks.Enqueue(new Track("Track 7", sectionTypes));
+            Competition.Tracks.Enqueue(new Track("Track 8", sectionTypes));
         }
 
         public static void NextRace()

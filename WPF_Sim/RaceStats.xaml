@@ -6,7 +6,18 @@
         xmlns:local="clr-namespace:WPF_Sim"
         mc:Ignorable="d"
         Title="RaceStats" Height="450" Width="800">
+    <Window.DataContext>
+        <local:Data_Context/>
+    </Window.DataContext>
     <Grid>
-        
+        <Label x:Name="_totalTime" Content="{Binding FastestLap}" HorizontalAlignment="Left" Margin="116,48,0,0" VerticalAlignment="Top" Foreground="Black"/>
+        <Label Content="Fastest ronde: " HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold"/>
+        <ListView Margin="210,134,429,10" ItemsSource="{Binding ListOfLaptimes1}">
+        </ListView>
+        <ListView Margin="411,134,217,10" ItemsSource="{Binding ListOfLaptimes2}">
+        </ListView>
+        <Label Content="Laptimes Max" HorizontalAlignment="Left" Margin="246,108,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold"/>
+        <Label Content="Laptimes Charles" HorizontalAlignment="Left" Margin="444,108,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold"/>
+
     </Grid>
 </Window>

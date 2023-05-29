@@ -12,9 +12,17 @@
     </Window.DataContext>
     <Grid Background="#FF525252">
 
-        <Label x:Name="_trackName" Content="{Binding TrackName}" HorizontalAlignment="Left" Margin="114,30,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Label x:Name="_lastLaptime" Content="{Binding LastLaptime}" HorizontalAlignment="Left" Margin="122,48,0,0" VerticalAlignment="Top" Foreground="White"/>
-        <Label Content="Current track: " HorizontalAlignment="Left" Margin="8,30,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White"/>
-        <Label Content="Last laptime: " HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <Label x:Name="_trackName" Content="{Binding TrackName}" HorizontalAlignment="Left" Margin="184,10,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Height="38" Width="187"/>
+        <Label x:Name="_lastLaptime" Content="{Binding LastLaptime}" HorizontalAlignment="Left" Margin="176,48,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label x:Name="_lastLaptime2" Content="{Binding LastLaptime2}" HorizontalAlignment="Left" Margin="176,74,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Label Content="Current track: " HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" FontSize="24"/>
+        <Label Content="Last laptime participant 1: " HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <ListView Margin="159,134,429,10" ItemsSource="{Binding TotalPoints1}">
+        </ListView>
+        <ListView Margin="411,134,175,10" ItemsSource="{Binding TotalPoints2}">
+        </ListView>
+        <Label Content="Last laptime participant 2: " HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <Label Content="Points Max" HorizontalAlignment="Left" Margin="221,103,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" Width="88"/>
+        <Label Content="Points Charles" HorizontalAlignment="Left" Margin="465,103,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" Width="106"/>
     </Grid>
 </Window>

@@ -32,6 +32,7 @@ namespace Model
         {
             try
             {
+                
                 List<GetPoints> newList = dataTemplates.Cast<GetPoints>().ToList();
                 return newList.Where(d => d.ScoredPoints == newList.Max(x => x.ScoredPoints)).First().Name;
             }
