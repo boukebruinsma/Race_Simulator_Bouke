@@ -16,8 +16,8 @@ namespace Controller
         }
         public static void AddParticipants()
         {
-            Competition.Participants.Add(new Driver { Name = "Max", Equipment = new Car { Speed = 100, Performance = 100, Quality = 25 } });
-            Competition.Participants.Add(new Driver { Name = "Charles", Equipment = new Car { Speed = 100, Performance = 100, Quality = 24} });
+            Competition.Participants.Add(new Driver { Name = "Max", Equipment = new Car { Speed = 0, Performance = 0, Quality = 25} });
+            Competition.Participants.Add(new Driver { Name = "Charles", Equipment = new Car { Speed = 0, Performance = 0, Quality = 24} });
 
         }
 
@@ -41,7 +41,6 @@ namespace Controller
         {
             if (!(Competition.Tracks.Equals(null)))
             {
-
                 CurrentRace = new Race(Competition.NextTrack(), Competition.Participants);
             }
         }

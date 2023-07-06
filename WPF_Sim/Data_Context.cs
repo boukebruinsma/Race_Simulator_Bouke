@@ -65,7 +65,6 @@ namespace WPF_Sim
                         ListOfLaptimes1.Clear();
                         ListOfLaptimes2.Clear();
                     });
-
                 }
 
                 //om laatste laptime op te slaan

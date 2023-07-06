@@ -48,7 +48,7 @@ namespace Controller
                 this.track = track;
                 this.participants = participants;
                 Debug.WriteLine("dit is het begin van de race. De baan is: " + track.Name);
-                //RandomizeEquipment();
+                RandomizeEquipment();
                 PositionParticipants(track, participants);
                 foreach (IParticipant participant in participants)
                 {
@@ -68,12 +68,6 @@ namespace Controller
                 timer.AutoReset = true;
                 timer.Start();
             }
-            //else
-            //{
-            //    Delegate[] clientList = DriversChanged.GetInvocationList();
-            //    foreach (var d in clientList)
-            //        DriversChanged -= (d as Changed);
-            //}
             
         }
 
@@ -126,8 +120,8 @@ namespace Controller
             for(int i = 0; i < count; i++)
             {
                 _random = new Random(DateTime.Now.Millisecond);
-                participants[i].Equipment.Quality = _random.Next();
-                participants[i].Equipment.Performance = _random.Next();
+                participants[i].Equipment.Speed = _random.Next(70, 100);
+                participants[i].Equipment.Performance = _random.Next(70, 100);
             }
         }
 
@@ -180,6 +174,11 @@ namespace Controller
             return "";
         }
 
+        public void RandomizeEquipmentBroken(SectionData data)
+        {
+            
+        }
+
         public void MoveParticipants()
         {
             Section previousSection = track.Sections.Last.Value;
@@ -190,8 +189,8 @@ namespace Controller
             bool rightHasMoved = false;
 
             foreach (Section section in track.Sections)
-            {
-                
+            {   
+                //Linker Deelnemer
                 if(copiedPositions[previousSection].Left != null && !leftHasMoved)
                 {
                     if (!copiedPositions[previousSection].Left.Equipment.IsBroken)
@@ -277,12 +276,11 @@ namespace Controller
                         copiedPositions[previousSection].Left.Equipment.IsBroken = false;
                         copiedPositions[previousSection].Left.Equipment.Quality -= 3;
                         copiedPositions[previousSection].Left.Equipment.Speed -= 15;
-
                     }
 
 
                 }
-
+                //Rechter Deelnemer
                 if (copiedPositions[previousSection].Right != null && !rightHasMoved)
                 {
                     if (!copiedPositions[previousSection].Right.Equipment.IsBroken)
