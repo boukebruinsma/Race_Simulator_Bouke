@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c1S7Ta+u4kMlynx/PygY08RlC6sEOyTJvbN4Zi5F/Zt3V7HikkKI5q0oN09AwSE0WErRWF+86OvkiJiPEHQPwQ==",
+  "dgSpecHash": "kvpbFyJELlH42w1E889vvgpkE4l4sUiBHjdvBU0Ze8qxDteIU+1eACuu9kgA9YA1Puo45UCp6RePDzbFqrrHBQ==",
   "success": true,
-  "projectFilePath": "/Users/bouke/Projects/Race_Simulator/Model/Model.csproj",
+  "projectFilePath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
