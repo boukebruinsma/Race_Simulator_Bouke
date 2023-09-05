@@ -41,7 +41,16 @@ namespace ControllerTest
         [Test]
         public void RandomizeEquipment_RandomEquipmentBreaking()
         {
-            
+            IParticipant testParticipant = _race.participants[0];
+            int oldSpeed = testParticipant.Equipment.Speed;
+            int oldQuality = testParticipant.Equipment.Quality;
+            for (int i = 0; i < 1000; i++)
+            {
+                _race.RandomizeEquipmentIsBroken(testParticipant);
+            }
+
+            Assert.Less(testParticipant.Equipment.Speed, oldSpeed);
+            Assert.Less(testParticipant.Equipment.Quality, oldQuality);
         }
     }
 
