@@ -61,7 +61,7 @@ namespace WPF_Sim {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/WPF_Sim;component/racestats.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/WPF_Sim;V1.0.0.0;component/racestats.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\RaceStats.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

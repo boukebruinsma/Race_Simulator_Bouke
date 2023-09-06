@@ -26,9 +26,9 @@ namespace Controller
         private Dictionary<Section, SectionData> _positions = new Dictionary<Section, SectionData>();
 
         //de value is hoever de participant heeft gereden
-        private Dictionary<IParticipant, int> _positiesOpBaan = new Dictionary<IParticipant, int>();
+        public Dictionary<IParticipant, int> positiesOpBaan = new Dictionary<IParticipant, int>();
         private Dictionary<IParticipant, int> _rondjesGeredenPerDeelnemer = new Dictionary<IParticipant, int>();
-        public List<GetLapTime> _lapTimesLeftRight = new List<GetLapTime>();
+        public List<GetLapTime> LapTimesLeftRight = new List<GetLapTime>();
 
 
         private Timer timer;
@@ -50,20 +50,20 @@ namespace Controller
                 PositionParticipants(track, participants);
                 foreach (IParticipant participant in participants)
                 {
-                    _positiesOpBaan.Add(participant, 0);
+                    positiesOpBaan.Add(participant, 0);
                     _rondjesGeredenPerDeelnemer.Add(participant, 0);
                 }
 
-                _lapTimesLeftRight.Add(new GetLapTime());
-                _lapTimesLeftRight.Add(new GetLapTime());
+                LapTimesLeftRight.Add(new GetLapTime());
+                LapTimesLeftRight.Add(new GetLapTime());
 
                 //linker
-                _lapTimesLeftRight[0].Name = participants[0].Name;
-                _lapTimesLeftRight[0].SectionTimes = new Dictionary<Section, TimeSpan>();
+                LapTimesLeftRight[0].Name = participants[0].Name;
+                LapTimesLeftRight[0].SectionTimes = new Dictionary<Section, TimeSpan>();
 
                 //rechter
-                _lapTimesLeftRight[1].Name = participants[1].Name;
-                _lapTimesLeftRight[1].SectionTimes = new Dictionary<Section, TimeSpan>();
+                LapTimesLeftRight[1].Name = participants[1].Name;
+                LapTimesLeftRight[1].SectionTimes = new Dictionary<Section, TimeSpan>();
 
                 stopwatches.Add(new Stopwatch());
                 stopwatches.Add(new Stopwatch());
@@ -164,9 +164,13 @@ namespace Controller
 
 
 
-        public string GetResult(int winnaar)
+        public void GetResult(int winnaar)
         {
             Data.Competition.PointsController.PutList(new GetPoints(Data.Competition.Participants[winnaar].Name, 25));
+
+            //voor de verliezende participant. 
+            //als de winnaar de 0 index heeft, dan wordt het omgezet naar 2. zo komt op regel 183 het goed uit met [winnaar -1]. dan is het dus 1. 
+            //als de winnaar index 1 heeft, is het dus 0 op regel 183. (1 - 1 = 0)
             if (winnaar == 0)
             {
                 winnaar = 2;
@@ -178,7 +182,6 @@ namespace Controller
                 RemoveBrokenSign(1);
             }
             Data.Competition.PointsController.PutList(new GetPoints(Data.Competition.Participants[winnaar - 1].Name, 18));
-            return "";
         }
 
         public bool RandomizeEquipmentIsBroken(IParticipant participant)
@@ -268,7 +271,7 @@ namespace Controller
             }
 
             int distancePerCount = (copiedParticipant.Equipment.Performance + copiedParticipant.Equipment.Speed) / 2;
-            _positiesOpBaan[copiedParticipant] += distancePerCount;
+            positiesOpBaan[copiedParticipant] += distancePerCount;
 
             //counter om te bepalen op welke sector de participant hoort
             int afstandAanEindSection = counter - 1;
@@ -278,7 +281,7 @@ namespace Controller
             }
 
             //wanneer de participant moet worden verplaatst naar de volgende section
-            if (_positiesOpBaan[copiedParticipant] >= afstandAanEindSection * 100)
+            if (positiesOpBaan[copiedParticipant] >= afstandAanEindSection * 100)
             {
                 //zodat ik de kant van de participants met de 0 of 1 index kan aanroepen om het verschill tussen links en rechts te bepalen
                 //daardoor minder dubbele code
@@ -289,12 +292,12 @@ namespace Controller
                 stopwatches[sideIndex].Stop();
 
                 //als de participant een heel rondje heeft gereden
-                if (_positiesOpBaan[participants[sideIndex]] >= 800)
+                if (positiesOpBaan[participants[sideIndex]] >= 800)
                 {
                     UpdateTimes(sideIndex);
 
                     _rondjesGeredenPerDeelnemer[participants[sideIndex]]++;
-                    _positiesOpBaan[participants[sideIndex]] -= 800;
+                    positiesOpBaan[participants[sideIndex]] -= 800;
 
                     //als het laatste rondje is gereden
                     if (_rondjesGeredenPerDeelnemer[participants[sideIndex]] == _rondjesTeRijden)
@@ -353,7 +356,7 @@ namespace Controller
                 //---
 
                 //last laptime erin zetten
-                _lapTimesLeftRight[sideIndex].SectionTimes.Add(previousSection, stopwatches[sideIndex].Elapsed);
+                LapTimesLeftRight[sideIndex].SectionTimes.Add(previousSection, stopwatches[sideIndex].Elapsed);
                 stopwatches[sideIndex].Reset();
                 stopwatches[sideIndex].Start();
                 //---
@@ -365,20 +368,20 @@ namespace Controller
 
         public void UpdateTimes(int sideIndex)
         {
-            if (_lapTimesLeftRight[sideIndex].LapTimes == null)
+            if (LapTimesLeftRight[sideIndex].LapTimes == null)
             {
-                _lapTimesLeftRight[sideIndex].LapTimes = new List<double>();
+                LapTimesLeftRight[sideIndex].LapTimes = new List<double>();
             }
 
             double newLapTime = 0.0;
 
-            foreach (var item in _lapTimesLeftRight[sideIndex].SectionTimes)
+            foreach (var item in LapTimesLeftRight[sideIndex].SectionTimes)
             {
                 newLapTime += item.Value.TotalSeconds;
             }
-            _lapTimesLeftRight[sideIndex].LapTimes.Add(newLapTime);
-            Data.Competition.TimeController.PutList(_lapTimesLeftRight[sideIndex]);
-            _lapTimesLeftRight[sideIndex].SectionTimes.Clear();
+            LapTimesLeftRight[sideIndex].LapTimes.Add(newLapTime);
+            Data.Competition.TimeController.PutList(LapTimesLeftRight[sideIndex]);
+            LapTimesLeftRight[sideIndex].SectionTimes.Clear();
         }
 
         public void DisposeRace()
