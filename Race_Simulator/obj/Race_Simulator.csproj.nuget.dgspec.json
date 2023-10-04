@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Race_Simulator\\Race_Simulator.csproj": {}
+    "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Race_Simulator\\Race_Simulator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj": {
+    "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj",
+        "projectUniqueName": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj",
         "projectName": "Controller",
-        "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj",
+        "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj",
         "packagesPath": "C:\\Users\\Bouke\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\obj\\",
         "projectStyle": "PackageReference",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj"
+              "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj"
               }
             }
           }
@@ -63,12 +63,12 @@
         }
       }
     },
-    "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
+    "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
+        "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\Bouke\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\obj\\",
         "projectStyle": "PackageReference",
@@ -118,12 +118,12 @@
         }
       }
     },
-    "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Race_Simulator\\Race_Simulator.csproj": {
+    "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Race_Simulator\\Race_Simulator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Race_Simulator\\Race_Simulator.csproj",
+        "projectUniqueName": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Race_Simulator\\Race_Simulator.csproj",
         "projectName": "Race_Simulator",
-        "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Race_Simulator\\Race_Simulator.csproj",
+        "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Race_Simulator\\Race_Simulator.csproj",
         "packagesPath": "C:\\Users\\Bouke\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Race_Simulator\\obj\\",
         "projectStyle": "PackageReference",
@@ -142,11 +142,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj": {
-                "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj"
+              "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj": {
+                "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj"
               },
-              "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj"
+              "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj"
               }
             }
           }
