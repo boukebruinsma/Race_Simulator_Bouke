@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\ControllerTest\\ControllerTest.csproj": {}
+    "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\ControllerTest\\ControllerTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\ControllerTest\\ControllerTest.csproj": {
+    "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\ControllerTest\\ControllerTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\ControllerTest\\ControllerTest.csproj",
+        "projectUniqueName": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\ControllerTest\\ControllerTest.csproj",
         "projectName": "ControllerTest",
-        "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\ControllerTest\\ControllerTest.csproj",
+        "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\ControllerTest\\ControllerTest.csproj",
         "packagesPath": "C:\\Users\\Bouke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\ControllerTest\\obj\\",
+        "outputPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\ControllerTest\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bouke\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj": {
-                "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj"
+              "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj": {
+                "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj"
               }
             }
           }
@@ -63,7 +63,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -72,18 +73,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj": {
+    "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj",
+        "projectUniqueName": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj",
         "projectName": "Controller",
-        "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj",
+        "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\Controller.csproj",
         "packagesPath": "C:\\Users\\Bouke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Controller\\obj\\",
+        "outputPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Controller\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bouke\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -100,8 +101,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
-                "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj"
+              "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
+                "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj"
               }
             }
           }
@@ -121,7 +122,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -130,18 +132,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
+    "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
+        "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\Bouke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\obj\\",
+        "outputPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bouke\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -175,7 +177,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -184,7 +187,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

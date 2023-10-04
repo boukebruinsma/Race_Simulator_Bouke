@@ -26,7 +26,6 @@ C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\bin\Debug\netcor
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\bin\Debug\netcoreapp3.1\Model.dll
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\bin\Debug\netcoreapp3.1\Controller.pdb
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\bin\Debug\netcoreapp3.1\Model.pdb
-C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\obj\Debug\netcoreapp3.1\Race_Simulator.csprojAssemblyReference.cache
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\obj\Debug\netcoreapp3.1\Race_Simulator.AssemblyInfoInputs.cache
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\obj\Debug\netcoreapp3.1\Race_Simulator.AssemblyInfo.cs
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\obj\Debug\netcoreapp3.1\Race_Simulator.csproj.CoreCompileInputs.cache
@@ -34,3 +33,5 @@ C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\obj\Debug\netcor
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\obj\Debug\netcoreapp3.1\Race_Simulator.dll
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\obj\Debug\netcoreapp3.1\Race_Simulator.pdb
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\Race_Simulator\obj\Debug\netcoreapp3.1\Race_Simulator.genruntimeconfig.cache
+C:\Users\Bouke\source\repos\Race_Simulator_Bouke\Race_Simulator\obj\Debug\netcoreapp3.1\Race_Simulator.csproj.AssemblyReference.cache
+C:\Users\Bouke\source\repos\Race_Simulator_Bouke\Race_Simulator\obj\Debug\netcoreapp3.1\Race_Simulator.GeneratedMSBuildEditorConfig.editorconfig

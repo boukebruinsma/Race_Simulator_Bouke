@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\WPF_Sim\obj\Debug\netcoreapp3.1\
+C:\Users\Bouke\source\repos\Race_Simulator_Bouke\WPF_Sim\obj\Debug\netcoreapp3.1\
 WPF_Sim
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\WPF_Sim\App.xaml
+C:\Users\Bouke\source\repos\Race_Simulator_Bouke\WPF_Sim\App.xaml
 3198445960
 9639262563
 10-11829454
-195265769319
+195107807142
 CompetitionStats.xaml;MainWindow.xaml;RaceStats.xaml;
 
-True
+False
 

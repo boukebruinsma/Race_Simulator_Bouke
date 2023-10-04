@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {}
+    "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
+    "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
+        "projectUniqueName": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
         "projectName": "Model",
-        "projectPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
+        "projectPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\Model.csproj",
         "packagesPath": "C:\\Users\\Bouke\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bouke\\Source\\Repos\\Race_Simulator_Bouke\\Model\\obj\\",
+        "outputPath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Model\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Bouke\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,7 +45,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -54,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

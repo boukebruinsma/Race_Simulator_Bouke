@@ -90,7 +90,6 @@ C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\bin\Debug\netcor
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\bin\Debug\netcoreapp3.1\Model.dll
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\bin\Debug\netcoreapp3.1\Controller.pdb
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\bin\Debug\netcoreapp3.1\Model.pdb
-C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.csprojAssemblyReference.cache
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.AssemblyInfoInputs.cache
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.AssemblyInfo.cs
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.csproj.CoreCompileInputs.cache
@@ -98,3 +97,5 @@ C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\obj\Debug\netcor
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.dll
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.pdb
 C:\Users\Bouke\Source\Repos\Race_Simulator_Bouke\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.genruntimeconfig.cache
+C:\Users\Bouke\source\repos\Race_Simulator_Bouke\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.csproj.AssemblyReference.cache
+C:\Users\Bouke\source\repos\Race_Simulator_Bouke\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.GeneratedMSBuildEditorConfig.editorconfig

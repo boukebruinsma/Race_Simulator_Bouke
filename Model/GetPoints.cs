@@ -31,8 +31,7 @@ namespace Model
         public string FindBestParticipant(List<DataTemplatesInterface> dataTemplates)
         {
             try
-            {
-                
+            {  
                 List<GetPoints> newList = dataTemplates.Cast<GetPoints>().ToList();
                 return newList.Where(d => d.ScoredPoints == newList.Max(x => x.ScoredPoints)).First().Name;
             }
