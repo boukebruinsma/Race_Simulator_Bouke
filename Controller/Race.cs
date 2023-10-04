@@ -366,6 +366,7 @@ namespace Controller
             return false;
         }
 
+        //voor toevoegen laptime op basis van sectiontimes
         public void UpdateTimes(int sideIndex)
         {
             if (LapTimesLeftRight[sideIndex].LapTimes == null)

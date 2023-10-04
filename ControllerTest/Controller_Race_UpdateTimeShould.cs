@@ -22,7 +22,7 @@ namespace ControllerTest
         {
             _race.LapTimesLeftRight[0].LapTimes = null;
 
-            _race.UpdateTimes(0);
+            _race.UpdateTimes(0); 
             //checken of er nu een laptime in zit
             Assert.IsNotNull(_race.LapTimesLeftRight[0].LapTimes);
             //tellen of er precies 1 lap in de laptimes zit
