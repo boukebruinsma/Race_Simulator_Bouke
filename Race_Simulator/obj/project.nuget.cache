@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "x+wzmOAxHIgyFoFjYyTMsYTG6C35IbGQefTZXtpD8jH+NqlZf08BJJJbp49E2PDfEdVNXDjEd1atYx9p1enzHQ==",
+  "dgSpecHash": "AetWTGiF6jM5YfPGe6D92LkA22HIId6xN1Gmo6bM1PjcsnyL+NhaqG3w/aKgwMzxxcUeCcKOrunvXyynZ/Lo0Q==",
   "success": true,
-  "projectFilePath": "/Users/bouke/Projects/Race_Simulator/Race_Simulator/Race_Simulator.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\Race_Simulator\\Race_Simulator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Bouke\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
+  ],
   "logs": []
 }
