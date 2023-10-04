@@ -10,8 +10,8 @@
         <local:Data_Context/>
     </Window.DataContext>
     <Grid>
-        <Label x:Name="_totalTime" Content="{Binding FastestLap}" HorizontalAlignment="Left" Margin="116,48,0,0" VerticalAlignment="Top" Foreground="Black"/>
-        <Label Content="Fastest lap " HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold"/>
+        <Label x:Name="_totalTime" Content="{Binding FastestLap}" HorizontalAlignment="Left" Margin="141,56,0,0" VerticalAlignment="Top" Foreground="Black" RenderTransformOrigin="0.541,0.541"/>
+        <Label Content="Fastest lap of last lap " HorizontalAlignment="Left" Margin="10,56,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold"/>
         <ListView Margin="210,134,429,10" ItemsSource="{Binding ListOfLaptimes1}">
         </ListView>
         <ListView Margin="411,134,217,10" ItemsSource="{Binding ListOfLaptimes2}">

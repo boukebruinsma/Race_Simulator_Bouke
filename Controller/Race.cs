@@ -380,6 +380,7 @@ namespace Controller
             {
                 newLapTime += item.Value.TotalSeconds;
             }
+            newLapTime = Math.Round(newLapTime, 3);
             LapTimesLeftRight[sideIndex].LapTimes.Add(newLapTime);
             Data.Competition.TimeController.PutList(LapTimesLeftRight[sideIndex]);
             LapTimesLeftRight[sideIndex].SectionTimes.Clear();

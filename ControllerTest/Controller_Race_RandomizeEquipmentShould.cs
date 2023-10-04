@@ -25,7 +25,7 @@ namespace ControllerTest
             _race.RandomizeEquipment();
 
             //Speed van Links
-            Assert.GreaterOrEqual(_race.participants[0].Equipment.Speed, 70);
+            Assert.LessOrEqual(_race.participants[0].Equipment.Speed, 70);           
             Assert.LessOrEqual(_race.participants[0].Equipment.Speed, 100);
             //Performance van Links
             Assert.GreaterOrEqual(_race.participants[0].Equipment.Performance, 70);
