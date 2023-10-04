@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "UceL159VVSgzrXdNEuTmxGC3Xxq2fKM/qQgTcyFQ+DEXrg/O68j7Mz4TrLe8QD20ItgfKiBX6mKKpjCVahrxVw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Bouke\\source\\repos\\Race_Simulator_Bouke\\WPF_Sim\\WPF_Sim.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Bouke\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\Bouke\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\Bouke\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\Bouke\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.32\\microsoft.netcore.app.host.win-x64.3.1.32.nupkg.sha512"
+  ],
+  "logs": []
+}

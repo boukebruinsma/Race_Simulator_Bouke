@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <StartupObject></StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\finish.png" />
+    <None Remove="images\fr.png" />
+    <None Remove="images\fr_broken.png" />
+    <None Remove="images\left.png" />
+    <None Remove="images\rb.png" />
+    <None Remove="images\rb_broken.png" />
+    <None Remove="images\right.png" />
+    <None Remove="images\startgrid.png" />
+    <None Remove="images\straight.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="images\finish.png" />
+    <Content Include="images\fr.png" />
+    <Content Include="images\fr_broken.png" />
+    <Content Include="images\left.png" />
+    <Content Include="images\rb.png" />
+    <Content Include="images\rb_broken.png" />
+    <Content Include="images\right.png" />
+    <Content Include="images\startgrid.png" />
+    <Content Include="images\straight.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="4.7.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Controller\Controller.csproj" />
+    <ProjectReference Include="..\Model\Model.csproj" />
+  </ItemGroup>
+
+</Project>
